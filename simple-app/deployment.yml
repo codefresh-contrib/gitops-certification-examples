@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-deployment
+  annotations:
+    app.komodor.com/deploy.job.jenkins: "https://codefresh.io"
+    app.komodor.com/service.link.playbook: "https://argoproj.github.io/argo-rollouts/"   
+    app.komodor.com/app: https://github.com/kostis-codefresh/trivial-go-web
+    app.komodor.com/app.ref: 8ec675b3af67df4df78a75b292d35e09edee8574
+    app.komodor.com/infra: https://github.com/komodorio/helm-charts
+    app.komodor.com/infra.ref: 32b355df32713afc511528d909eff296e91dbe74
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trivial-go-web-app
+  template:
+    metadata:
+      labels:
+        app: trivial-go-web-app
+    spec:
+      containers:
+      - name: webserver-simple
+        image: docker.io/kostiscodefresh/simple-web-app:3d9b390
+        ports:
+        - containerPort: 8080
