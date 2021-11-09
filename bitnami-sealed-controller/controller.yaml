@@ -205,7 +205,7 @@ spec:
         name: sealed-secrets-controller
     spec:
       containers:
-      - args: ["--update-status]
+      - args: ["--update-status"]
         command:
         - controller
         env: []
