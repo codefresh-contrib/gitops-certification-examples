@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: gitops-secrets-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: gitops-secrets-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
+      - nodePort: 31000
+        protocol: TCP
+        port: 8080
