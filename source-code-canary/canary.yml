@@ -1,0 +1,32 @@
+# More examples of Codefresh YAML can be found at
+# https://codefresh.io/docs/docs/yaml-examples/examples/
+
+version: "1.0"
+# Stages can help you organize your steps in stages
+stages:
+  - "clone"
+  - "build"
+
+steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "codefresh-contrib/gitops-certification-examples"
+    revision: "main"
+    stage: "clone"
+
+  build:
+    title: "Building Docker image"
+    type: "build"
+    image_name: "kostiscodefresh/gitops-canary-app"
+    working_directory: "${{clone}}/source-code-canary"
+    tag: main
+    tags:
+    - "latest"
+    - "v1.0"
+    dockerfile: "Dockerfile"
+    stage: "build"
+    registry: dockerhub
+
+
+
