@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: https://github.com/codefresh-contrib/gitops-certification-examples.git
     targetRevision: HEAD
-    path: ./simple-app
+    path: ./declarative/manifests
    
   # Destination cluster and namespace to deploy the application
   destination:
