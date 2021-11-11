@@ -1,0 +1,34 @@
+body {
+	margin:10px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif
+}
+
+.box {
+	width:200px;
+	height:200px;
+	margin:10px;
+	padding:10px;
+    float: left;
+}
+
+.pod
+{
+    width:100%;
+	height:100%;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: x-large;
+}
+
+.box {
+	background:rgb(105, 105, 105);
+    border-radius: 25px;
+}
+
+
+h2, p  {
+	padding:5px;
+}
+
