@@ -17,9 +17,6 @@ spec:
     targetRevision: HEAD
     path: ./simple-app
    
-    # directory
-    directory:
-      recurse: false
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
