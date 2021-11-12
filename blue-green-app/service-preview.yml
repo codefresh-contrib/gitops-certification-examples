@@ -4,9 +4,10 @@ metadata:
   name: rollout-bluegreen-preview
 spec:
   type: NodePort
+  selector:
+    app: trivial-go-web-app  
   ports:
       - nodePort: 32000
         protocol: TCP
         port: 8080
-  selector:
-    app: trivial-go-web-app
+
