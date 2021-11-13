@@ -4,8 +4,8 @@
 replicaCount: 1
 image:
   pullPolicy: IfNotPresent
-  repository: docker.io/hseligson/helm-gitops-example
-  tag: v1.0.1
+  repository: codefresh/kubectl
+  tag: 1.14.9
 service:
   name: python
   type: LoadBalancer
