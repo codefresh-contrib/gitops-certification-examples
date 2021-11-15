@@ -21,7 +21,7 @@ steps:
     - "v1.0"
     dockerfile: "Dockerfile"
     stage: "build"
-    registry: dockerhub
+    registry: DockerHubRegistry
   deploy:
     type: helm
     stage: deploy
