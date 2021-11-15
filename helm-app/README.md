@@ -1,3 +1,1 @@
-# Deploying Helm with GitOps
-A python application including a Helm chart.
-
+A sample GO application with Dockerfile and Helm.

@@ -1,0 +1,39 @@
+version: '1.0'
+stages:
+  - clone
+  - build
+  - deploy
+steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "codefresh-contrib/gitops-certification-examples"
+    revision: "main"
+    stage: "clone"
+  build:
+    title: "Building Docker image"
+    type: "build"
+    image_name: "kostiscodefresh/gitops-simple-app"
+    working_directory: "${{clone}}/helm-app"
+    tag: main
+    tags:
+    - "latest"
+    - "v1.0"
+    dockerfile: "Dockerfile"
+    stage: "build"
+    registry: dockerhub
+  deploy:
+    type: helm
+    stage: deploy
+    working_directory: ./helm-app
+    arguments:
+      action: install
+      chart_name: charts/helm-example
+      release_name: my-go-chart-prod
+      helm_version: 3.0.2
+      kube_context: hannah-demo-cluster
+      custom_values:
+        - 'buildID=${{CF_BUILD_ID}}'
+        - 'image_pullPolicy=Always'
+        - 'image_tag=${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+        - 'replicaCount=3'
