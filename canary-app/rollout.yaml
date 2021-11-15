@@ -1,0 +1,37 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: summer-k8s-rollout
+spec:
+  revisionHistoryLimit: 1
+  replicas: 10
+  selector:
+    matchLabels:
+      app: summer-k8s-app
+  template:
+    metadata:
+      labels:
+        app: summer-k8s-app
+    spec:
+      containers:
+      - name: webserver-simple
+        image: kostiscodefresh/summer-of-k8s-app:v3
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+  strategy:
+    canary:
+      stableService: summer-k8s-service-stable
+      canaryService: summer-k8s-service-canary
+      trafficRouting:
+        ambassador:
+          mappings:
+            - summer-k8s-mapping
+      steps:
+      - setWeight: 30
+      - pause: {}
+      - setWeight: 60
+      - pause: {}
+      - setWeight: 100
+      - pause: {}     

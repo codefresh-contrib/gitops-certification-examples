@@ -1,0 +1,14 @@
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: demo-host
+spec:
+  # Disable default TLS on ambassador
+  acmeProvider:
+    authority: none
+  # Allow HTTP port to be used as is
+  requestPolicy:
+    insecure:
+      action: Route
+
+
