@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
   repository: kostiscodefresh/gitops-simple-app
-  tag: main
+  tag: v1.0
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
