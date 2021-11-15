@@ -32,8 +32,3 @@ steps:
       release_name: my-go-chart-prod
       helm_version: 3.0.2
       kube_context: hannah-demo-cluster
-      custom_values:
-        - 'buildID=${{CF_BUILD_ID}}'
-        - 'image_pullPolicy=Always'
-        - 'image_tag=${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
-        - 'replicaCount=3'
