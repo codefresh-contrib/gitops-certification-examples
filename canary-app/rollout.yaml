@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: summer-k8s-rollout
+  name: simple-rollout
 spec:
   revisionHistoryLimit: 1
   replicas: 10
