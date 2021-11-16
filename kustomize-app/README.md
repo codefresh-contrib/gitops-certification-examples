@@ -1,0 +1,1 @@
+This is a sample Kustomize application that includes both a base and overlays folder with both Staging and Production environments.
