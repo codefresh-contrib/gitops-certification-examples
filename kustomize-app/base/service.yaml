@@ -6,7 +6,9 @@ metadata:
     app: demo
 spec:
   ports:
-    - port: 8080
+  - nodePort: 31000
+    protocol: TCP
+    port: 8080
   selector:
     app: demo
-  type: ClusterIP
+  type: NodePort
