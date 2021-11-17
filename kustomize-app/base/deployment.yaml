@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: the-container
-        image: docker.io/kostiscodefresh/gitops-simple-app:v1.0
+        image: docker.io/kostiscodefresh/gitops-kustomize-app:v1.0
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
