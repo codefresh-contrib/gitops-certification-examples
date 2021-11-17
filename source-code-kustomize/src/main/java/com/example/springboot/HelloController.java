@@ -10,7 +10,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String index() {
-		return my_sql_db;
+		return "Mysql is at " +my_sql_db;
 	}
 
 }
