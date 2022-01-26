@@ -5,4 +5,4 @@ certification workshops.
 
 Take the certification yourself at https://codefresh.io/courses/get-gitops-certified/
 
-test code 22222
+test code 22222 from develop
