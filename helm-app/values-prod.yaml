@@ -1,2 +1,2 @@
-ingress:
-  enabled: true
+# ingress:
+#   enabled: true
