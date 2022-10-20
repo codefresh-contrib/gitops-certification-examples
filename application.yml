@@ -4,7 +4,7 @@ metadata:
   name: demo-rollouts
 spec:
   destination:
-    name: ''
+    name: 'demo-rollouts'
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
