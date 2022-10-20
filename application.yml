@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-rollouts
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ./blue-green-app
+    repoURL: 'https://github.com/eladleev-nate/gitops-certification-examples'
+    targetRevision: HEAD
+  project: default
