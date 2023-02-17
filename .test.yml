@@ -7,7 +7,7 @@ install:
   - npm install
 
 script:
-  - npm test
+  - npm testh
   - npm run coverage
 
 notifications:
