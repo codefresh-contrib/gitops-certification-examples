@@ -18,3 +18,4 @@ spec:
         image: docker.io/kostiscodefresh/gitops-simple-app:v2.0
         ports:
         - containerPort: 8080
+#Atualizado
