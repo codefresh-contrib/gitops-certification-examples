@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-deployment
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: webserver-simple
-        image: docker.io/kostiscodefresh/gitops-simple-app:v1.0
+        image: docker.io/kostiscodefresh/gitops-simple-app:v2.0
         ports:
         - containerPort: 8080
