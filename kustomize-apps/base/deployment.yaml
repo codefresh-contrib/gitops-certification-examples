@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: the-deployment
+ name: my-deployment
  labels:
    deployment: demo
 spec:
@@ -12,7 +12,7 @@ spec:
         deployment: demo
     spec:
       containers:
-      - name: the-container
+      - name: my-container
         image: docker.io/kostiscodefresh/gitops-kustomize-app:v1.0
         ports:
         - containerPort: 8080
@@ -21,5 +21,5 @@ spec:
         - name: MY_MYSQL_DB
           valueFrom:
             configMapKeyRef:
-              name: the-map
+              name: my-configuration
               key: mysqlDB
