@@ -6,12 +6,12 @@ metadata:
   labels:
     app: summer-k8s-app  
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: summer-k8s-app
   ports:
-      - nodePort: 32000
-        protocol: TCP
-        port: 8080
-
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
         
