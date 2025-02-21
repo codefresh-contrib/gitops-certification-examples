@@ -178,7 +178,7 @@ service:
     port: 443
     targetPort: 8443
     protocol: TCP
-    nodePort: 32080
+    nodePort: 31443
       # hostPort: 443
     # TCPMapping_Port
       # port: 2222
