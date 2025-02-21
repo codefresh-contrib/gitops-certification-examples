@@ -6,6 +6,6 @@ spec:
   weighted:
     services:
       - name: rollout-canary-active
-        port: 8080
+        port: 80
       - name: rollout-canary-preview 
-        port: 8080
+        port: 80
