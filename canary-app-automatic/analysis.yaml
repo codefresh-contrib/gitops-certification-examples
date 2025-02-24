@@ -6,7 +6,7 @@ spec:
   metrics:
   - name: verify-canary
     interval: 1m
-    count: 3
+    count: 4
     provider:
       job:
         spec:
