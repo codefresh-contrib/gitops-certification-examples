@@ -37,6 +37,4 @@ spec:
       analysis:
         templates:
         - templateName: simple-200-return
-        args:
-        - name: service-name
-          value: golang-sample-app        
+       
