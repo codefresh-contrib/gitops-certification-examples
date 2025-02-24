@@ -1,0 +1,11 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: traefik-service
+spec:
+  weighted:
+    services:
+      - name: rollout-canary-active
+        port: 80
+      - name: rollout-canary-preview 
+        port: 80

@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate
+spec:
+  args:
+  - name: service-name
+  metrics:
+  # - name: success-rate
+  #   interval: 2m
+  #   count: 2
+  #   # NOTE: prometheus queries return results in the form of a vector.
+  #   # So it is common to access the index 0 of the returned array to obtain the value
+  #   successCondition: result[0] >= 0.95
+  #   provider:
+  #     prometheus:
+  #       address: http://prom-release-prometheus-server.prom.svc.cluster.local:80
+  #       query: sum(response_status{app="{{args.service-name}}",role="canary",status=~"2.*"})/sum(response_status{app="{{args.service-name}}",role="canary"})
+  - name: simple-200-return
+    provider:
+      job:
+        spec:
+          backoffLimit: 1
+          template:
+            spec:
+              containers:
+                - name: simple-http-call
+                  image: curlimages/curl:8.12.1
+                  command:
+                    ["curl",  "--silent", "rollout-canary-preview/callme"]
+              restartPolicy: Never
