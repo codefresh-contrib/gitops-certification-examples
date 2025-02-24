@@ -3,8 +3,6 @@ kind: AnalysisTemplate
 metadata:
   name: simple-200-return
 spec:
-  args:
-  - name: service-name
   metrics:
   - name: verify-canary
     interval: 1m
