@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: the-map
-data:
-  mysqlDB: "staging-mysql.example.com:3306"
