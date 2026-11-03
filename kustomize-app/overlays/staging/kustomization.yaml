@@ -1,7 +1,0 @@
-namePrefix: staging-
-commonLabels:
-  variant: staging
-bases:
-- ../../base
-patchesStrategicMerge:
-- config-map.yaml

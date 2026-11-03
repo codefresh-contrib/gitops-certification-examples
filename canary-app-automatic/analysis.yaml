@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: simple-200-return
+spec:
+  metrics:
+  - name: verify-canary
+    interval: 1m
+    count: 4
+    provider:
+      job:
+        spec:
+          backoffLimit: 1
+          template:
+            spec:
+              containers:
+                - name: simple-http-call
+                  image: curlimages/curl:8.12.1
+                  command:
+                    ["curl",  "--silent", "rollout-canary-preview/callme"]
+              restartPolicy: Never

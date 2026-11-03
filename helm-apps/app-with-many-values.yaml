@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-prod
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io      
+spec:
+  project: default
+  source:
+    path: helm-apps/many-envs-chart
+    repoURL: https://github.com/codefresh-contrib/gitops-certification-examples
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+      - common-values.yaml            
+      - prod-values.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default 
+  syncPolicy:
+    automated: 
+      prune: true
